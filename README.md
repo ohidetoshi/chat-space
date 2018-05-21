@@ -6,12 +6,15 @@ DB設計
 |------|----|-------|
 |id|integer|null: false, primary_key: true|
 |name|varchar(255)|null: false|
-|email|varchar(255)|null: false|
+|email|varchar(255)|null: false, unique: true|
 |timestamp|integer|null: false|
 
 ### Association
-- has_many :groups
+- has_many :groups, through: :members
 - has_many :messages
+
+### Add_index
+- name
 
 
 
@@ -20,12 +23,11 @@ DB設計
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, primary_key: true|
-|groupname|varchar(255)|null: false|
+|name|varchar(255)|null: false|
 |timestamp|integer|null: false|
 
-
 ### Association
-- has_many :users
+- has_many :users, through: :members
 - has_many :messages
 
 
