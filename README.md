@@ -4,8 +4,8 @@ DB設計
 
 |Column|Type|Options|
 |------|----|-------|
-|name|varchar(255)|null: false|
-|email|varchar(255)|null: false, unique: true|
+|name|string|null: false|
+|email|string|null: false, unique: true|
 
 ### Association
 - has_many :members
@@ -21,7 +21,7 @@ DB設計
 
 |Column|Type|Options|
 |------|----|-------|
-|name|varchar(255)|null: false|
+|name|string||
 
 ### Association
 - has_many :members
