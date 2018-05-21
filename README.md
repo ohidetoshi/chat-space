@@ -34,8 +34,8 @@ DB設計
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
-|image|text|null: true|
+|body|text||
+|image|text||
 |user|references|null: false, foreign_key: true|
 |group|references|null: false, foreign_key: true|
 
