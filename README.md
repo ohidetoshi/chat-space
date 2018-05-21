@@ -4,7 +4,7 @@ DB設計
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, primary_key: true|
+|id|integer|null: false|
 |name|varchar(255)|null: false|
 |email|varchar(255)|null: false, unique: true|
 
@@ -22,7 +22,7 @@ DB設計
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, primary_key: true|
+|id|integer|null: false|
 |name|varchar(255)|null: false|
 
 ### Association
@@ -36,7 +36,7 @@ DB設計
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, primary_key: true|
+|id|integer|null: false|
 |body|text|null: false|
 |image|text|null: true|
 |user_id|references|null: false, foreign_key: true|
