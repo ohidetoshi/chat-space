@@ -7,7 +7,6 @@ DB設計
 |id|integer|null: false, primary_key: true|
 |name|varchar(255)|null: false|
 |email|varchar(255)|null: false, unique: true|
-|timestamp|integer|null: false|
 
 ### Association
 - has_many :members
@@ -25,7 +24,6 @@ DB設計
 |------|----|-------|
 |id|integer|null: false, primary_key: true|
 |name|varchar(255)|null: false|
-|timestamp|integer|null: false|
 
 ### Association
 - has_many :members
@@ -43,7 +41,6 @@ DB設計
 |image|text|null: true|
 |user_id|references|null: false, foreign_key: true|
 |group_id|references|null: false, foreign_key: true|
-|timestamp|integer|null: false|
 
 ### Association
 - belongs_to :group
