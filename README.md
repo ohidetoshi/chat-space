@@ -10,6 +10,7 @@ DB設計
 |timestamp|integer|null: false|
 
 ### Association
+- has_many :members
 - has_many :groups, through: :members
 - has_many :messages
 
@@ -27,6 +28,7 @@ DB設計
 |timestamp|integer|null: false|
 
 ### Association
+- has_many :members
 - has_many :users, through: :members
 - has_many :messages
 
