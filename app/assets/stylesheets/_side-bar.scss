@@ -4,7 +4,7 @@
   float: left;
   color: $side-barFC;
 
-  .side-bar__header {
+  &__header {
     background-color: $side-barHeadBC;
     padding: 0 20px;
     height: 100px;
@@ -12,13 +12,13 @@
     line-height: 100px;
     position: fixed;
 
-    .header__name {
+    &__name {
       font-size: 16px;
       font-weight: bold;
       display: inline-block;
     }
 
-    .header__lists {
+    &__lists {
       float: right;
       list-style: none;
 
@@ -30,19 +30,19 @@
   }
 
 
-  .side-bar__groups {
+  &__groups {
     background-color: $side-barGrpBC;
     padding: 20px;
     height: 100vw;
     width: 260px;
     position: fixed;
     top: 100px;
-    .groups__group {
-      .group__name {
+    &__group {
+      &__name {
         font-size: 15px;
         padding-bottom: 5px;
       }
-      .group__message {
+      &__message {
         font-size: 11px;
         padding-bottom: 40px;
       }

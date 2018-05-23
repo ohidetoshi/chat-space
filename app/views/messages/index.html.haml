@@ -2,9 +2,9 @@
 .side-bar
   / ログインユーザー情報
   .side-bar__header
-    %h3.header__name
+    %h3.side-bar__header__name
       イニエスタ
-    %ul.header__lists
+    %ul.side-bar__header__lists
       %li.list
         %i
           = fa_icon 'pencil-square-o', class: 'icon'
@@ -13,64 +13,64 @@
           = fa_icon 'cog', class: 'icon'
   / 参加グループ情報
   .side-bar__groups
-    .groups__group
-      .group__name
+    .side-bar__groups__group
+      .side-bar__groups__group__name
         バルセロナ辞める
-      .group__message
+      .side-bar__groups__group__message
         あーーーーーーーーーーーー
-    .groups__group
-      .group__name
+    .side-bar__groups__group
+      .side-bar__groups__group__name
         スペイン代表
-      .group__message
+      .side-bar__groups__group__message
         ワールドカップ優勝
 
 / チャット画面
 .chat
   / グループ情報
   .chat__header
-    .header__left
-      .left__title
+    .chat__header__left
+      .chat__header__left__title
         バルセロナ辞める
       %span.member Member :
       %span.member イニエスタ
       %span.member ネイマール
       %span.member スアレス
-    .header__right
-      .right__button EDIT
+    .chat__header__right
+      .chat__header__right__button EDIT
   / メッセージ
   .chat__messages
-    .messages__message
-      .message__upper
-        .upper__username
+    .chat__messages__message
+      .chat__messages__message__upper
+        .chat__messages__message__upper__username
           イニエスタ
-        .upper__date
+        .chat__messages__message__upper__date
           2018/05/22 15:33
-      .message__lower
-        .lowre__content
+      .chat__messages__message__lower
+        .chat__messages__message__lower__content
           バルサ辞めて、神戸に行きます。
-    .messages__message
-      .message__upper
-        .upper__username
+    .chat__messages__message
+      .chat__messages__message__upper
+        .chat__messages__message__upper__username
           ネイマール
-        .upper__date
+        .chat__messages__message__upper__date
           2018/05/22 15:34
-      .message__lower
-        .lowre__content
+      .chat__messages__message__lower
+        .chat__messages__message__lower__content
           パリに来ればいいのに
-    .messages__message
-      .message__upper
-        .upper__username
+    .chat__messages__message
+      .chat__messages__message__upper
+        .chat__messages__message__upper__username
           スアレス
-        .upper__date
+        .chat__messages__message__upper__date
           2018/05/22 15:35
-      .message__lower
-        .lowre__content
+      .chat__messages__message__lower
+        .chat__messages__message__lower__content
           最悪だ
   / 投稿
   .chat__form
-    %form.js__from
-      .form__message type a message
-      .form__mask
+    %form.js-from
+      .js-form__message type a message
+      .js-form__mask
         %label.mask__image
           %i
             = fa_icon 'picture-o', class: 'icon'
