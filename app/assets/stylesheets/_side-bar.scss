@@ -21,14 +21,12 @@
     &__lists {
       float: right;
       list-style: none;
-
       .list {
         float: left;
         padding-left: 5px;
       }
     }
   }
-
 
   &__groups {
     background-color: $side-barGrpBC;
