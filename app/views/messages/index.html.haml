@@ -1,1 +1,82 @@
-%p hello
+/ サイドバー
+.side-bar
+  / ログインユーザー情報
+  .side-bar__header
+    %h3.header__name
+      イニエスタ
+    %ul.header__lists
+      %li.list
+        %i
+          = fa_icon 'pencil-square-o', class: 'icon'
+      %li.list
+        %i
+          = fa_icon 'cog', class: 'icon'
+  / 参加グループ情報
+  .side-bar__groups
+    .groups__group
+      .group__name
+        バルセロナ辞める
+      .group__message
+        あーーーーーーーーーーーー
+    .groups__group
+      .group__name
+        スペイン代表
+      .group__message
+        ワールドカップ優勝
+
+/ チャット画面
+.chat
+  / グループ情報
+  .chat__header
+    .header__left
+      .left__title
+        バルセロナ辞める
+      %span.member Member :
+      %span.member イニエスタ
+      %span.member ネイマール
+      %span.member スアレス
+    .header__right
+      .right__button EDIT
+  / メッセージ
+  .chat__messages
+    .messages__message
+      .message__upper
+        .upper__username
+          イニエスタ
+        .upper__date
+          2018/05/22 15:33
+      .message__lower
+        .lowre__content
+          バルサ辞めて、神戸に行きます。
+    .messages__message
+      .message__upper
+        .upper__username
+          ネイマール
+        .upper__date
+          2018/05/22 15:34
+      .message__lower
+        .lowre__content
+          パリに来ればいいのに
+    .messages__message
+      .message__upper
+        .upper__username
+          スアレス
+        .upper__date
+          2018/05/22 15:35
+      .message__lower
+        .lowre__content
+          最悪だ
+  / 投稿
+  .chat__form
+    %form.js__from
+      .form__message type a message
+      .form__mask
+        %label.mask__image
+          %i
+            = fa_icon 'picture-o', class: 'icon'
+        %input.form__submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+
+
+
+
+
