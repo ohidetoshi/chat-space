@@ -3,7 +3,7 @@
   float: right;
 
   &__header {
-    background-color: $chatHeadBC;
+    background-color: $white;
     height: 100px;
     width: calc(100vw - 380px);
     padding: 0 40px;
@@ -14,22 +14,22 @@
       &__title {
         padding-top: 35px;
         font-size: 20px;
-        color: $chatTitleFC;
+        color: #333333;
       }
       .member {
         padding-top: 15px;
         font-size: 12px;
-        color: $chatMemberFC;
+        color: $thin-gray;
       }
     }
 
     &__right {
-      border: 1px solid $editButtonFC;
+      border: 1px solid $light-blue;
       margin-top: 28px;
       float:right;
       &__button {
         height: 40px;
-        color: $editButtonFC;
+        color: $light-blue;
         padding: 0 20px;
         line-height: 40px;
       }
@@ -37,7 +37,7 @@
   }
 
   &__messages {
-    background-color: $chatMsgBC;
+    background-color: #FAFAFA;
     padding: 146px 40px 0;
     height: 100vw;
     overflow: scroll;
@@ -48,22 +48,22 @@
         &__username {
           font-size: 16px;
           font-weight: bold;
-          color: $mesUserFC;
+          color: $dark-gray;
         }
         &__date {
           font-size: 12px;
-          color: $mesDateFC;
+          color: $thin-gray;
         }
       }
       &__lower {
         font-size: 14px;
-        color: $mesFC;
+        color: $dark-gray;
       }
     }
   }
 
   &__form {
-    background-color: $chatFormBC;
+    background-color: #DDDDDD;
     height: 50px;
     width: calc(100vw - 390px);
     padding: 20px 40px 20px 50px;
@@ -73,7 +73,7 @@
     form.js-from {
       width: 100%;
       height: 50px;
-      background-color: $chatFormMesBC;
+      background-color: $white;
       .js-form__message {
         width: calc(100% - 300px);
         height: 50px;
@@ -81,7 +81,7 @@
         float: left;
       }
       .js-form__mask {
-        background-color: $chatFormMesBC;
+        background-color: $white;
         height: 50px;
         display: inline-block;
         float: right;
@@ -89,13 +89,13 @@
           padding-right: 10px;
         }
         input.form__submit {
-          background-color: $chatFormSendBC;
+          background-color: $light-blue;
           border: none;
           float: right;
           height: 50px;
           padding: 0 30px;
           margin-left:  15px;
-          color: $mesSendFC;
+          color: $white;
         }
       }
     }

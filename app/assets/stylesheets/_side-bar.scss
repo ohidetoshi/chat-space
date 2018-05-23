@@ -2,10 +2,10 @@
   height: 100vw;
   width: 300px;
   float: left;
-  color: $side-barFC;
+  color: $white;
 
   &__header {
-    background-color: $side-barHeadBC;
+    background-color: #253141;
     padding: 0 20px;
     height: 100px;
     width: 260px;
@@ -29,7 +29,7 @@
   }
 
   &__groups {
-    background-color: $side-barGrpBC;
+    background-color: #2f3e51;
     padding: 20px;
     height: 100vw;
     width: 260px;
