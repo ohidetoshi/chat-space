@@ -24,8 +24,8 @@ DB設計
 |name|string||
 
 ### Association
-- has_many :members
-- has_many :users, through: :members
+- has_many :group_users
+- has_many :users, through: :group_users
 - has_many :messages
 
 
@@ -45,7 +45,7 @@ DB設計
 
 
 
-## membersテーブル
+## group_usersテーブル(中間テーブル)
 
 |Column|Type|Options|
 |------|----|-------|
