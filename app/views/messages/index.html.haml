@@ -1,18 +1,5 @@
 / サイドバー
-.side-bar
-  / ログインユーザー情報
-  .side-bar__header
-    %h3.side-bar__header__name
-      イニエスタ
-    %ul.side-bar__header__lists
-      %li.list
-        %i
-          = fa_icon 'pencil-square-o', class: 'icon'
-      %li.list
-        %i
-          = fa_icon 'cog', class: 'icon'
-  / 参加グループ情報  renderで別ファイルで記述
-  = render "group"
+= render "shared/side_bar"
 
 / チャット画面
 .chat
