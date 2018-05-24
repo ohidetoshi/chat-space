@@ -1,0 +1,49 @@
+.side-bar {
+  height: 100vw;
+  width: 300px;
+  float: left;
+  color: $white;
+
+  &__header {
+    background-color: #253141;
+    padding: 0 20px;
+    height: 100px;
+    width: 260px;
+    line-height: 100px;
+    position: fixed;
+
+    &__name {
+      font-size: 16px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    &__lists {
+      float: right;
+      list-style: none;
+      .list {
+        float: left;
+        padding-left: 5px;
+      }
+    }
+  }
+
+  &__groups {
+    background-color: #2f3e51;
+    padding: 20px;
+    height: 100vw;
+    width: 260px;
+    position: fixed;
+    top: 100px;
+    &__group {
+      &__name {
+        font-size: 15px;
+        padding-bottom: 5px;
+      }
+      &__message {
+        font-size: 11px;
+        padding-bottom: 40px;
+      }
+    }
+  }
+}

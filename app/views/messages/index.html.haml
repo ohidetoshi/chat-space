@@ -1,1 +1,41 @@
-%p hello
+/ サイドバー
+.side-bar
+  / ログインユーザー情報
+  .side-bar__header
+    %h3.side-bar__header__name
+      イニエスタ
+    %ul.side-bar__header__lists
+      %li.list
+        %i
+          = fa_icon 'pencil-square-o', class: 'icon'
+      %li.list
+        %i
+          = fa_icon 'cog', class: 'icon'
+  / 参加グループ情報  renderで別ファイルで記述
+  = render "group"
+
+/ チャット画面
+.chat
+  / グループ情報
+  .chat__header
+    .chat__header__left
+      .chat__header__left__title
+        バルセロナ辞める
+      %span.member Member :
+      %span.member イニエスタ
+      %span.member ネイマール
+      %span.member スアレス
+    .chat__header__right
+      .chat__header__right__button EDIT
+  / メッセージ  renderで別ファイルで記述
+  = render "message"
+
+  / 投稿
+  .chat__form
+    %form.js-from
+      .js-form__message type a message
+      .js-form__mask
+        %label.mask__image
+          %i
+            = fa_icon 'picture-o', class: 'icon'
+        %input.form__submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
