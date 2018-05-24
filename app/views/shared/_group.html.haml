@@ -1,11 +1,9 @@
 .side-bar__groups
-  .side-bar__groups__group
-    .side-bar__groups__group__name
-      バルセロナ辞める
-    .side-bar__groups__group__message
-      あーーーーーーーーーーーー
-  .side-bar__groups__group
-    .side-bar__groups__group__name
-      スペイン代表
-    .side-bar__groups__group__message
-      ワールドカップ優勝
+  - current_user.groups.each do |group|
+    .side-bar__groups__group
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .side-bar__groups__group__name
+            = group.name
+          .side-bar__groups__group__message
+            あーーーーーーーーーーーー
