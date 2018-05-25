@@ -34,7 +34,7 @@ DB設計
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text||
+|content|text||(bodyからカリキュラムに合わせ変更)
 |image|text||
 |user|references|null: false, foreign_key: true|
 |group|references|null: false, foreign_key: true|
@@ -45,7 +45,7 @@ DB設計
 
 
 
-## group_usersテーブル(中間テーブル)
+## group_usersテーブル(中間テーブル・・membersからカリキュラムにあわせ変更)
 
 |Column|Type|Options|
 |------|----|-------|
