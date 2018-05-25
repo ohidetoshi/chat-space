@@ -7,12 +7,12 @@
   .chat__header
     .chat__header__left
       .chat__header__left__title
-        バルセロナ辞める
+        = @group.name
       .chat__header__left__members
         %span.member Member :
-        %span.member イニエスタ
-        %span.member ネイマール
-        %span.member スアレス
+        - @group.users.each do |name|
+          %span.member
+            = name.name
     .chat__header__right
       .chat__header__right__button EDIT
   / メッセージ  renderで別ファイルで記述
