@@ -16,7 +16,8 @@
     .chat__header__right
       .chat__header__right__button EDIT
   / メッセージ  renderで別ファイルで記述
-  = render "message"
+  .chat__messages
+    = render @messages
 
   / 投稿  23行目のclassで’js-from'を指定してるのは、先にscssを作成してたため・・
   / formが2重になってしまったため、form_forでクラスを指定した
