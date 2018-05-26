@@ -7,23 +7,25 @@
   .chat__header
     .chat__header__left
       .chat__header__left__title
-        バルセロナ辞める
+        = @group.name
       .chat__header__left__members
         %span.member Member :
-        %span.member イニエスタ
-        %span.member ネイマール
-        %span.member スアレス
+        - @group.users.each do |name|
+          %span.member
+            = name.name
     .chat__header__right
       .chat__header__right__button EDIT
   / メッセージ  renderで別ファイルで記述
-  = render "message"
+  .chat__messages
+    = render @messages
 
-  / 投稿
+  / 投稿  23行目のclassで’js-from'を指定してるのは、先にscssを作成してたため・・
+  / formが2重になってしまったため、form_forでクラスを指定した
   .chat__form
-    %form.js-from
-      .js-form__message type a message
+    = form_for [@group, @message], html: { class: 'js-from'} do |f|
+      = f.text_field :content, class: 'js-form__message', placeholder: 'type a message'
       .js-form__mask
-        %label.mask__image
-          %i
-            = fa_icon 'picture-o', class: 'icon'
-        %input.form__submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+        = f.label :image, class: 'mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+        = f.submit 'Sned', class: 'form__submit'

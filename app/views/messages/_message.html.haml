@@ -1,28 +1,12 @@
-.chat__messages
-  .chat__messages__message
-    .chat__messages__message__upper
-      .chat__messages__message__upper__username
-        イニエスタ
-      .chat__messages__message__upper__date
-        2018/05/22 15:33
-    .chat__messages__message__lower
+.chat__messages__message
+  .chat__messages__message__upper
+    .chat__messages__message__upper__username
+      = message.user.name
+    .chat__messages__message__upper__date
+      = message.created_at.strftime('%Y/%m/%d %H:%M')
+  .chat__messages__message__lower
+    - if message.content.present?
       .chat__messages__message__lower__content
-        バルサ辞めて、神戸に行きます。
-  .chat__messages__message
-    .chat__messages__message__upper
-      .chat__messages__message__upper__username
-        ネイマール
-      .chat__messages__message__upper__date
-        2018/05/22 15:34
-    .chat__messages__message__lower
-      .chat__messages__message__lower__content
-        パリに来ればいいのに
-  .chat__messages__message
-    .chat__messages__message__upper
-      .chat__messages__message__upper__username
-        スアレス
-      .chat__messages__message__upper__date
-        2018/05/22 15:35
-    .chat__messages__message__lower
-      .chat__messages__message__lower__content
-        最悪だ
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
