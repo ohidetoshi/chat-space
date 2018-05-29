@@ -36,14 +36,10 @@ $(function(){
       var html = buildHTML(data);
       $('.chat__messages').append(html);
       $('.js-form__message').val('');
-      // $('html,body').animate({scrollTop: 500}, 500, 'swing');
       $('.chat__messages').animate({scrollTop: $('.chat__messages')[0].scrollHeight}, 'fast');
     })
 
-    .fail(function(a,b,c){
-      console.log(a)
-      console.log(b)
-      console.log(c)
+    .fail(function(){
       alert('error');
     })
     return false;
