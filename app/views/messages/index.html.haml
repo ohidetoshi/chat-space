@@ -1,9 +1,6 @@
-/ サイドバー
 = render "shared/side_bar"
 
-/ チャット画面
 .chat
-  / グループ情報
   .chat__header
     .chat__header__left
       .chat__header__left__title
@@ -15,12 +12,9 @@
             = name.name
     .chat__header__right
       .chat__header__right__button EDIT
-  / メッセージ  renderで別ファイルで記述
   .chat__messages
     = render @messages
 
-  / 投稿  23行目のclassで’js-from'を指定してるのは、先にscssを作成してたため・・
-  / formが2重になってしまったため、form_forでクラスを指定した
   .chat__form
     = form_for [@group, @message], html: { class: 'js-from'} do |f|
       = f.text_field :content, class: 'js-form__message', placeholder: 'type a message'
@@ -28,4 +22,4 @@
         = f.label :image, class: 'mask__image' do
           = fa_icon 'picture-o', class: 'icon'
           = f.file_field :image, class: 'hidden'
-        = f.submit 'Sned', class: 'form__submit'
+        = f.submit 'Send', class: 'form__submit'
