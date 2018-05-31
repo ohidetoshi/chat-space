@@ -1,7 +1,7 @@
 $(function() {
 
   var user_list = $('#user-search-result');
-  var add_user_list = $('.js-add-user');
+  var add_user_list = $('#add-user');
 
 
   function appendUser(user) {
@@ -66,7 +66,7 @@ $(function() {
     $(this).parent().remove();
   });
 
-  $('.js-add-user').on('click', '.user-search-remove', function(){
+  $('#add-user').on('click', '.user-search-remove', function(){
     $(this).parent().remove();
   });
 });
