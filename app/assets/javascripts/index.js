@@ -1,6 +1,6 @@
 $(function() {
 
-  var user_list = $('.user-search-result');
+  var user_list = $('#user-search-result');
   var add_user_list = $('.js-add-user');
 
 
@@ -33,7 +33,7 @@ $(function() {
   $('#user-search-field').on('keyup', function() {
     var input = $('#user-search-field').val();
     if (input.length == 0) {
-      $('.user-search-result').empty();
+      $('#user-search-result').empty();
     } else {
         $.ajax({
           type: 'GET',
@@ -42,7 +42,7 @@ $(function() {
           dataType: 'json'
         })
         .done(function(users){
-          $('.user-search-result').empty();
+          $('#user-search-result').empty();
           if (users.length != 0) {
             users.forEach(function(user){
               appendUser(user);
@@ -58,7 +58,7 @@ $(function() {
     }
   });
 
-  $('.user-search-result').on('click', '.user-search-add', function(){
+  $('#user-search-result').on('click', '.user-search-add', function(){
     var user = $(this);
     var userId = user.data('user-id');
     var userName = user.data('user-name');
