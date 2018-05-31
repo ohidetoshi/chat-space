@@ -3,7 +3,6 @@ $(function() {
   var user_list = $('#user-search-result');
   var add_user_list = $('#add-user');
 
-
   function appendUser(user) {
     var html =`<div class="chat-group-user clearfix">
                  <p class="chat-group-user__name">${ user.name }</p>
@@ -19,7 +18,6 @@ $(function() {
       user_list.append(html);
   }
 
-
   function addUser(userId, userName) {
     var html =`<div class='chat-group-user clearfix js-chat-member'>
                  <input name='group[user_ids][]' type='hidden' value='${ userId }' class='chatuserid'>
@@ -28,7 +26,6 @@ $(function() {
                </div>`
       add_user_list.append(html);
   }
-
 
   $('#user-search-field').on('keyup', function() {
     var input = $('#user-search-field').val();
