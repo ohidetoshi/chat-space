@@ -64,12 +64,10 @@ $(function() {
     var userId = user.data('user-id');
     var userName = user.data('user-name');
     addUser(userId, userName);
-    console.log(userId, userName);
     $(this).parent().remove();
   });
 
   $('.js-add-user').on('click', '.user-search-remove', function(){
-    console.log(this)
     $(this).parent().remove();
   });
 });
