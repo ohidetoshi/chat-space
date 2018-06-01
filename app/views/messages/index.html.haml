@@ -11,7 +11,9 @@
           %span.member
             = name.name
     .chat__header__right
-      .chat__header__right__button EDIT
+      .chat__header__right__button
+        = link_to 'EDIT', edit_group_path(@group)
+
   .chat__messages
     = render @messages
 
