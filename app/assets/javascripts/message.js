@@ -62,9 +62,9 @@ $(function(){
     .done(function(data){
       if (data.length !== 0){
         data.forEach(function(data){
-      var html = buildHTML(data);
-      $('.chat__messages').append(html);
-      $('.chat__messages').animate({scrollTop: $('.chat__messages')[0].scrollHeight}, 'fast');
+          var html = buildHTML(data);
+          $('.chat__messages').append(html);
+          $('.chat__messages').animate({scrollTop: $('.chat__messages')[0].scrollHeight}, 'fast');
         })
       }
     })
