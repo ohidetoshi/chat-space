@@ -4,7 +4,7 @@ $(function(){
     var image = '';
     message.image == null? image = '': image = `<img class="lower-message__image" src="${message.image}">`;
 
-    var html =`<div class="chat__messages__message">
+    var html =`<div class="chat__messages__message" data-message-id="${message.id}">
                  <div class="chat__messages__message__upper">
                    <div chat__messages__message__upper__username>
                      ${message.name}
@@ -17,9 +17,10 @@ $(function(){
                    <div class="chat__messages__message__lower__content">
                      ${message.content}
                    </div>
+                   <div>
                      ${image}
-                 </div>
-              </div>`
+                   </div>
+                 </div>`
     return html;
   }
 
@@ -35,17 +36,40 @@ $(function(){
       processData: false,
       contentType: false
     })
-
     .done(function(data){
       var html = buildHTML(data);
       $('.chat__messages').append(html);
       $('.js-form__message').val('');
       $('.chat__messages').animate({scrollTop: $('.chat__messages')[0].scrollHeight}, 'fast');
     })
-
     .fail(function(){
       alert('error');
     })
     return false;
   })
+
+  $(function(){
+    setInterval(update, 5000);
+  });
+  function update(){
+    var msgId = $('.chat__messages__message').last().data('message-id');
+    $.ajax({
+      Url: location.pathname,
+      type: 'GET',
+      data: { id: msgId},
+      dataType: 'json'
+    })
+    .done(function(data){
+      if (data.length !== 0){
+        data.forEach(function(data){
+      var html = buildHTML(data);
+      $('.chat__messages').append(html);
+      $('.chat__messages').animate({scrollTop: $('.chat__messages')[0].scrollHeight}, 'fast');
+        })
+      }
+    })
+    .fail(function(){
+      alert('ettor')
+    })
+  }
 })
