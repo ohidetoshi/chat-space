@@ -52,11 +52,11 @@ $(function(){
     setInterval(update, 5000);
   });
   function update(){
-    var msgId = $('.chat__messages__message').last().data('message-id');
+    var new_msgId = $('.chat__messages__message').last().data('message-id');
     $.ajax({
       Url: location.pathname,
       type: 'GET',
-      data: { id: msgId},
+      data: { id: new_msgId},
       dataType: 'json'
     })
     .done(function(data){
