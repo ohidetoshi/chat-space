@@ -53,23 +53,27 @@ $(function(){
   });
   function update(){
     var new_msgId = $('.chat__messages__message').last().data('message-id');
-    $.ajax({
-      Url: location.pathname,
-      type: 'GET',
-      data: { id: new_msgId},
-      dataType: 'json'
-    })
-    .done(function(data){
-      if (data.length !== 0){
-        data.forEach(function(data){
-          var html = buildHTML(data);
-          $('.chat__messages').append(html);
-          $('.chat__messages').animate({scrollTop: $('.chat__messages')[0].scrollHeight}, 'fast');
-        })
-      }
-    })
-    .fail(function(){
-      alert('ettor')
-    })
+    if (window.location.pathname.match(/\/groups\/\d+\/messages/)){
+      $.ajax({
+        Url: location.pathname,
+        type: 'GET',
+        data: { id: new_msgId},
+        dataType: 'json'
+      })
+      .done(function(data){
+        if (data.length !== 0){
+          data.forEach(function(data){
+            var html = buildHTML(data);
+            $('.chat__messages').append(html);
+            $('.chat__messages').animate({scrollTop: $('.chat__messages')[0].scrollHeight}, 'fast');
+          })
+        }
+      })
+      .fail(function(){
+        alert('ettor')
+      })
+    } else {
+      clearInterval(update);
+    }
   }
 })
